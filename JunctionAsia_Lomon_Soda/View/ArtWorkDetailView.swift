@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
+    var artWorkInformation: UnitDatum?
     
     var body: some View {
         ZStack {
             Color.white
-            Color.backgroundBlue.ignoresSafeArea()
+            Color.mint.ignoresSafeArea()
             
             VStack(spacing: 20){
                 HStack {
@@ -28,12 +29,20 @@ struct ArtWorkDetailView: View {
                 
                 HStack(spacing: 20) {
                     VStack(spacing: 10) {
-                        Image("testImage")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                            .border(.black, width: 10)
-                            .aspectRatio(contentMode: .fit)
-                        Text("작품이름: 레몬소다")
+                        AsyncImage(url: URL(string: artWorkInformation?.imageURL ?? "")){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 160,
+                                       height: 160,
+                                       alignment: .center)
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                        }
+
+                        Text(artWorkInformation?.name ?? "")
+                            .foregroundColor(.black)
                             .padding(5)
                             .font(.system(size: 14, weight: .regular))
                             .background(Rectangle().fill(Color.white))
