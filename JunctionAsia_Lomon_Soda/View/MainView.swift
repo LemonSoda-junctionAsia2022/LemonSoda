@@ -36,10 +36,9 @@ struct MainView: View {
                                     AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
                                         image
                                             .resizable()
+                                            .frame(width: 160, height: 160, alignment: .trailing)
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 160,
-                                                   height: 160,
-                                                   alignment: .center)
+                                            .border(Color.black, width: 8)
                                     } placeholder: {
                                         ProgressView()
                                             .progressViewStyle(.circular)
