@@ -31,7 +31,20 @@ struct PopupView: View {
                     
                 }
                 .padding(.horizontal, 16)
-
+                
+//                ForEach(0..<coreDataManager.likeds.imageURL.count) { num in
+//                    AsyncImage(url: URL(string: liked.nftImage)){ image in
+//                        image
+//                            .resizable()
+//                            .frame(width: 160, height: 160, alignment: .trailing)
+//                            .aspectRatio(contentMode: .fit)
+//                            .border(Color.black, width: 8)
+//                    } placeholder: {
+//                        ProgressView()
+//                            .progressViewStyle(.circular)
+//                    }
+//                }
+                
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(0..<3) {_ in
