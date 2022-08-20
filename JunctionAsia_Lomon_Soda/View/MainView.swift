@@ -16,8 +16,9 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.mainColor
-                .ignoresSafeArea()
+            Image("ExhibitionViewBackGround")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             
             VStack {
                 Button(action: {

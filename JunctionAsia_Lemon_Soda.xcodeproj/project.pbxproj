@@ -21,6 +21,7 @@
 		98F1BE9428B0AD9200FA0E61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9328B0AD9200FA0E61 /* Persistence.swift */; };
 		98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */; };
 		A9EBA3C828B131A900DF5A97 /* NFTDataSet.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EBA3C728B131A900DF5A97 /* NFTDataSet.json */; };
+		A9EBA3CA28B16AD300DF5A97 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C928B16AD300DF5A97 /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		98F1BE9328B0AD9200FA0E61 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		98F1BE9628B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JunctionAsia_Lomon_Soda.xcdatamodel; sourceTree = "<group>"; };
 		A9EBA3C728B131A900DF5A97 /* NFTDataSet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NFTDataSet.json; sourceTree = "<group>"; };
+		A9EBA3C928B16AD300DF5A97 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		987C0B2128B0AE6F00E9E188 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9EBA3C928B16AD300DF5A97 /* IntroView.swift */,
 				987C0B2228B0AE8200E9E188 /* MainView.swift */,
 				987C0B2728B0C20E00E9E188 /* PopupView.swift */,
 				9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */,
@@ -205,6 +208,7 @@
 				987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */,
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
 				987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */,
+				A9EBA3CA28B16AD300DF5A97 /* IntroView.swift in Sources */,
 				98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */,
 				987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */,
 				987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */,
@@ -345,9 +349,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,7 +361,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -375,9 +379,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,7 +391,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
