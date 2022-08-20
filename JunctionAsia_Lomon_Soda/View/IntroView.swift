@@ -13,6 +13,7 @@ struct IntroView: View {
             Image("MainViewBackGround")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+            rabbit()
             VStack(spacing: 10){
                 Text("NFiTion")
                     .font(.dunggeummo.title)
@@ -32,6 +33,13 @@ struct IntroView: View {
                 }
             }
         }
+    }
+
+    private func rabbit() -> some View {
+        Image("stopRabbit")
+            .resizable()
+            .frame(width: 274, height: 203, alignment: .center)
+            .offset(x: -300, y: 50)
     }
 }
 
