@@ -21,6 +21,7 @@ struct IntroView: View {
                 Text("NFT Exhibition X Junction Asia 2022")
                     .font(.dunggeummo.subtitle)
                     .foregroundColor(Color.mainTitleGreen)
+                    .padding(.bottom, 45)
 
                 HStack (spacing: 28){
                     NavigationLink(destination: MainView()) {
