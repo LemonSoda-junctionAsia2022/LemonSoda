@@ -8,48 +8,51 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var isShowing = false
+    @State private var artWorks: [UnitDatum] = load("NFTDataSet.json")
+    @State private var isShowingFavorite = false
+    @State private var isShowingInfo = false
+    @State private var arts: [UnitDatum] = [UnitDatum]()
     var height: CGFloat = 2
     
     var body: some View {
         ZStack {
             Color.mainColor
                 .ignoresSafeArea()
+            
             VStack {
-                HStack{
-                    Button(action: {
-                        isShowing = true
-                    }, label: {
-                        Text("버튼")
-                    })
-                }
-                .fullScreenCover(isPresented: $isShowing) {
-                    popupView()
-                }
-                
+                Button(action: {
+                    isShowingFavorite = true
+                }, label: {
+                    Text("버튼")
+                })
                 HStack(spacing: 80) {
-                    ForEach(1..<10) {_ in
+                    ForEach(artWorks, id: \.id) { artWork in
                         VStack(spacing: 20) {
-                            Image("testImage")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                                .aspectRatio(contentMode: .fit)
-                            Text("작품 이름 / 설명")
-                                .padding(5)
-                                .font(.system(size: 16, weight: .bold))
+                            Button(action: {
+                                isShowingInfo = true
+                            }, label: {
+                                AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 160,
+                                               height: 160,
+                                               alignment: .center)
+                                } placeholder: {
+                                    ProgressView()
+                                        .progressViewStyle(.circular)
+                                }
+                            })
+                            
+                            Text("\(artWork.name ?? "")")
                                 .background(Rectangle().fill(Color.clear)
                                     .border(Color.gray)
                                 )
                         }
-                        .padding(.leading, 100)
                     }
                 }
-                Rectangle()
-                    .foregroundColor(.yellow)
-                    .frame(height: height)
+                .edgesIgnoringSafeArea(.horizontal)
             }
-            .edgesIgnoringSafeArea(.horizontal)
-            
             VStack {
                 Spacer()
                 HStack {
@@ -59,6 +62,11 @@ struct MainView: View {
                     Spacer()
                 }
             }
+            if isShowingFavorite {
+                PopupView(isShowingFavorite: $isShowingFavorite)
+            } else if isShowingInfo {
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo)
+            }
         }
     }
 }
@@ -66,5 +74,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

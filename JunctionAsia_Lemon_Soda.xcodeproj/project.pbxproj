@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */; };
 		987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* test1.swift */; };
 		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
 		987C0B2028B0AE6700E9E188 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1F28B0AE6700E9E188 /* test3.swift */; };
 		987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2228B0AE8200E9E188 /* MainView.swift */; };
 		987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2528B0B3B300E9E188 /* Color+Extension.swift */; };
-		987C0B2828B0C20E00E9E188 /* popupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2728B0C20E00E9E188 /* popupView.swift */; };
+		987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2728B0C20E00E9E188 /* PopupView.swift */; };
 		98F1BE8B28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE8A28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift */; };
 		98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE8C28B0AD9200FA0E61 /* ContentView.swift */; };
 		98F1BE8F28B0AD9200FA0E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F1BE8E28B0AD9200FA0E61 /* Assets.xcassets */; };
@@ -22,12 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkDetailView.swift; sourceTree = "<group>"; };
 		987C0B1B28B0AE5900E9E188 /* test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
 		987C0B1D28B0AE6000E9E188 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		987C0B1F28B0AE6700E9E188 /* test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
 		987C0B2228B0AE8200E9E188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		987C0B2528B0B3B300E9E188 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		987C0B2728B0C20E00E9E188 /* popupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupView.swift; sourceTree = "<group>"; };
+		987C0B2728B0C20E00E9E188 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		98F1BE8728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionAsia_Lomon_Soda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F1BE8A28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunctionAsia_Lemon_SodaApp.swift; sourceTree = "<group>"; };
 		98F1BE8C28B0AD9200FA0E61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				987C0B2228B0AE8200E9E188 /* MainView.swift */,
-				987C0B2728B0C20E00E9E188 /* popupView.swift */,
+				987C0B2728B0C20E00E9E188 /* PopupView.swift */,
+				9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,9 +203,10 @@
 				987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */,
 				98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */,
 				987C0B2028B0AE6700E9E188 /* test3.swift in Sources */,
-				987C0B2828B0C20E00E9E188 /* popupView.swift in Sources */,
+				987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */,
 				987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */,
 				98F1BE8B28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift in Sources */,
+				9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
