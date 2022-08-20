@@ -12,7 +12,8 @@ struct IntroView: View {
         ZStack{
             Image("MainViewBackGround")
                 .resizable()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+                .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             rabbit()
             VStack(spacing: 10){
                 Text("NFiTion")

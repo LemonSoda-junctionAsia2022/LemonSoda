@@ -19,8 +19,8 @@ struct MainView: View {
         ZStack {
             Image("ExhibitionViewBackGround")
                 .resizable()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
-            
+                .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             VStack {
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
