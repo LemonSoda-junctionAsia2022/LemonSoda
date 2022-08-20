@@ -22,13 +22,21 @@ struct IntroView: View {
                     .font(.dunggeummo.subtitle)
                     .foregroundColor(Color.mainTitleGreen)
 
-                HStack {
+                HStack (spacing: 28){
                     NavigationLink(destination: MainView().navigationBarHidden(true)) {
-                        Text("START")
-                            .bold()
-                            .padding(10)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
+                        Text("FAVORITES")
+                            .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
+                            .background(Color.backgroundBlue)
+                            .font(.dunggeummo.favoritesButton)
+                            .foregroundColor(Color.magentaPink)
+                    }
+
+                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
+                        Text("VISITATION")
+                            .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
+                            .background(Color.backgroundBlue)
+                            .font(.dunggeummo.visitationButton)
+                            .foregroundColor(Color.mainBlue)
                     }
                 }
             }
