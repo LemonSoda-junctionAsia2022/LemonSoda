@@ -16,8 +16,9 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.mainColor
-                .ignoresSafeArea()
+            Image("ExhibitionViewBackGround")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             
             VStack {
                 Button(action: {
@@ -27,27 +28,29 @@ struct MainView: View {
                 })
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
-                        VStack(spacing: 20) {
-                            Button(action: {
-                                isShowingInfo = true
-                            }, label: {
-                                AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 160,
-                                               height: 160,
-                                               alignment: .center)
-                                } placeholder: {
-                                    ProgressView()
-                                        .progressViewStyle(.circular)
-                                }
-                            })
-                            
-                            Text("\(artWork.name ?? "")")
-                                .background(Rectangle().fill(Color.clear)
-                                    .border(Color.gray)
-                                )
+                        if artWork.imageURL?.isEmpty == false {
+                            VStack(spacing: 20) {
+                                Button(action: {
+                                    isShowingInfo = true
+                                }, label: {
+                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 160,
+                                                   height: 160,
+                                                   alignment: .center)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .progressViewStyle(.circular)
+                                    }
+                                })
+
+                                Text("\(artWork.name ?? "")")
+                                    .background(Rectangle().fill(Color.clear)
+                                        .border(Color.gray)
+                                    )
+                            }
                         }
                     }
                 }
