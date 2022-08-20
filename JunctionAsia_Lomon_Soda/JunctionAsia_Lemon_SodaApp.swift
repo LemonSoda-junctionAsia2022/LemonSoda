@@ -12,7 +12,7 @@ struct JunctionAsia_Lemon_SodaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TestTimerView()
         }
     }
 }

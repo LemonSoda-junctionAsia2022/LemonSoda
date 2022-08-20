@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26F77FC328B0D4AC00A2E039 /* TestTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F77FC228B0D4AC00A2E039 /* TestTimerView.swift */; };
+		26F77FC728B12E6C00A2E039 /* FullScreenPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F77FC628B12E6C00A2E039 /* FullScreenPop.swift */; };
 		987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* test1.swift */; };
 		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
 		987C0B2028B0AE6700E9E188 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1F28B0AE6700E9E188 /* test3.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26F77FC228B0D4AC00A2E039 /* TestTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimerView.swift; sourceTree = "<group>"; };
+		26F77FC628B12E6C00A2E039 /* FullScreenPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPop.swift; sourceTree = "<group>"; };
 		987C0B1B28B0AE5900E9E188 /* test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
 		987C0B1D28B0AE6000E9E188 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		987C0B1F28B0AE6700E9E188 /* test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				987C0B2228B0AE8200E9E188 /* MainView.swift */,
+				26F77FC228B0D4AC00A2E039 /* TestTimerView.swift */,
+				26F77FC628B12E6C00A2E039 /* FullScreenPop.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F77FC328B0D4AC00A2E039 /* TestTimerView.swift in Sources */,
 				98F1BE9428B0AD9200FA0E61 /* Persistence.swift in Sources */,
 				987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */,
+				26F77FC728B12E6C00A2E039 /* FullScreenPop.swift in Sources */,
 				987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */,
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
 				987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */,
