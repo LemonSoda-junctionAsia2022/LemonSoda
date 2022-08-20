@@ -29,7 +29,7 @@ struct MainView: View {
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
                         if artWork.imageURL?.isEmpty == false {
-                            VStack(spacing: 20) {
+                            VStack(alignment: .trailing, spacing: 10) {
                                 Button(action: {
                                     isShowingInfo = true
                                 }, label: {
