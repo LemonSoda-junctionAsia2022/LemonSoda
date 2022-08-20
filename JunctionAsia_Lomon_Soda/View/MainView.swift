@@ -8,49 +8,55 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var artWorks : [UnitDatum] = load("NFTDataSet.json")
+    @State private var artWorks: [UnitDatum] = load("NFTDataSet.json")
+    @State private var isShowing = false
+    @State private var arts: [UnitDatum] = [UnitDatum]()
     var height: CGFloat = 2
+    
     var body: some View {
         ZStack {
             Color.mainColor
                 .ignoresSafeArea()
-            HStack(spacing: 80) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(artWorks, id: \.id) { artWork in
-                            VStack(spacing: 20) {
-                                AsyncImage(url: URL(string: artWork.imageURL ?? "")) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.25, alignment: .center)
+            
+            VStack {
+                Button(action: {
+                    isShowing = true
+                }, label: {
+                    Text("버튼")
+                })
+                HStack(spacing: 80) {
+                    ForEach(artWorks, id: \.id) { artWork in
+                        VStack(spacing: 20) {
+                            AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 160,
+                                           height: 160,
+                                           alignment: .center)
 
-                                } placeholder: {
-                                    ProgressView()
-                                        .progressViewStyle(.circular)
-                                }
-
-                                Text("\(artWork.name ?? "")")
-                                    .background(Rectangle().fill(Color.clear)
-                                        .border(Color.gray)
-                                    )
+                            } placeholder: {
+                                ProgressView()
+                                    .progressViewStyle(.circular)
                             }
-                            .padding(.leading, 100)
+                            
+                            Text("\(artWork.name ?? "")")
+                                .background(Rectangle().fill(Color.clear)
+                                    .border(Color.gray)
+                                )
                         }
                     }
-                    Rectangle()
-                        .foregroundColor(.yellow)
-                        .frame(height: height)
                 }
-            }
-            .edgesIgnoringSafeArea(.horizontal)
-            VStack {
-                Spacer()
-                HStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 60, height: 90)
+                .edgesIgnoringSafeArea(.horizontal)
+                
+                VStack {
                     Spacer()
+                    HStack {
+                        Image(systemName: "person")
+                            .resizable()
+                            .frame(width: 60, height: 90)
+                        Spacer()
+                    }
                 }
             }
         }
