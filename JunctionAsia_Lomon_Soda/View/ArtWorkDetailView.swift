@@ -10,8 +10,10 @@ import SwiftUI
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
     @Binding var isShowingFavorite: Bool
+    @State var likeColor = false
     var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
+    
     @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
     var liked: FetchedResults<Liked>
     
@@ -81,17 +83,32 @@ struct ArtWorkDetailView: View {
                         .background(.white)
                         .cornerRadius(10)
                         HStack(spacing: 20) {
-                            Button(action: {
-                                isShowingFavorite = true
-                            }, label: {
-                                Text("Like  ♥︎")
-                                    .foregroundColor(.buttonTextGray)
-                            })
-                            .frame(width: 200, height: 40, alignment: .center)
-                            .background(Rectangle().fill(Color.buttonGray))
-                            .fullScreenCover(isPresented: $isShowingFavorite) {
-                                PopupView(isShowingFavorite: $isShowingFavorite)
+                            if !likeColor {
+                                Button(action: {
+                                    isShowingFavorite = true
+//                                    favorites.append(artWorkInformation!)
+                                    likeColor.toggle()
+    //                                coreDataManager.createLikeData(jsonObject: )
+                                }, label: {
+                                    Text("Like  ♥︎")
+                                        .foregroundColor(.buttonTextGray)
+                                })
+                                .frame(width: 200, height: 40, alignment: .center)
+                                .background(Rectangle().fill(Color.buttonGray))
+                            } else {
+                                Button(action: {
+                                    isShowingFavorite = false
+//                                    favorites.append(artWorkInformation!)
+                                    likeColor.toggle()
+    //                                coreDataManager.createLikeData(jsonObject: )
+                                }, label: {
+                                    Text("Like  ♥︎")
+                                        .foregroundColor(.white)
+                                })
+                                .frame(width: 200, height: 40, alignment: .center)
+                                .background(Rectangle().fill(Color.magentaPink))
                             }
+                            
                             
                             Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
@@ -99,6 +116,9 @@ struct ArtWorkDetailView: View {
                             }
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.mainBlue))
+                        }
+                        .fullScreenCover(isPresented: $isShowingFavorite) {
+                            PopupView(isShowingFavorite: $isShowingFavorite)
                         }
                     }
                 }
