@@ -11,7 +11,9 @@ import CoreData
 struct ContentView: View {
 
     var body: some View {
-        MainView()
+        NavigationView{
+        IntroView()
+        }
     }
 }
 
