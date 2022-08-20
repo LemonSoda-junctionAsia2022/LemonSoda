@@ -20,11 +20,11 @@ struct MainView: View {
             Image("ExhibitionViewBackGround")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
-            
+
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
                         if artWork.imageURL?.isEmpty == false {
-                            VStack(spacing: 20) {
+                            VStack(alignment: .trailing, spacing: 10) {
                                 Button(action: {
                                     isShowingInfo = true
                                     indexPath = artWork.id
@@ -32,39 +32,36 @@ struct MainView: View {
                                     AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
                                         image
                                             .resizable()
+                                            .frame(width: 160, height: 160, alignment: .trailing)
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 160,
-                                                   height: 160,
-                                                   alignment: .center)
+                                            .border(Color.black, width: 8)
                                     } placeholder: {
                                         ProgressView()
                                             .progressViewStyle(.circular)
                                     }
                                 })
-
                                 Text("\(artWork.name ?? "")")
-                                    .background(Rectangle().fill(Color.clear)
-                                        .border(Color.gray)
-                                    )
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    .background(Rectangle().fill(Color.white))
+                                    .multilineTextAlignment(.trailing)
                             }
                         }
                     }
                 }
                 .edgesIgnoringSafeArea(.horizontal)
-            VStack {
-                Spacer()
-                HStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 60, height: 90)
-                    Spacer()
-                }
             }
+            rabbit()
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
                 ArtWorkDetailView(isShowingInfo: $isShowingInfo, artWorkInformation: passingData)
             }
         }
+    }
+
+    private func rabbit() -> some View {
+        GifView(fileName: "rabbit")
+            .frame(width: 450, height: 225, alignment: .center)
+            .offset(x: -300, y: 80)
     }
 }
 
