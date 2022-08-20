@@ -21,11 +21,11 @@ struct MainView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             
             VStack {
-                Button(action: {
-                    isShowingFavorite = true
-                }, label: {
-                    Text("버튼")
-                })
+//                Button(action: {
+//                    isShowingFavorite = true
+//                }, label: {
+//                    Text("버튼")
+//                })
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
                         if artWork.imageURL?.isEmpty == false {
