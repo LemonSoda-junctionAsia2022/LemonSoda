@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
+    @Binding var isShowingFavorite: Bool
     var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
+    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
+    var liked: FetchedResults<Liked>
+    
     var body: some View {
         ZStack {
             Color.white
@@ -78,13 +82,16 @@ struct ArtWorkDetailView: View {
                         .cornerRadius(10)
                         HStack(spacing: 20) {
                             Button(action: {
-                                
+                                isShowingFavorite = true
                             }, label: {
                                 Text("Like  ♥︎")
                                     .foregroundColor(.buttonTextGray)
                             })
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.buttonGray))
+                            .fullScreenCover(isPresented: $isShowingFavorite) {
+                                PopupView(isShowingFavorite: $isShowingFavorite)
+                            }
                             
                             Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
@@ -94,7 +101,6 @@ struct ArtWorkDetailView: View {
                             .background(Rectangle().fill(Color.mainBlue))
                         }
                     }
-                    //                    }
                 }
             }
             .padding(.bottom, 20)

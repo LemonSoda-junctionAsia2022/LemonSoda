@@ -10,6 +10,9 @@ import SwiftUI
 struct PopupView: View {
     @Binding var isShowingFavorite: Bool
     
+    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
+    var liked: FetchedResults<Liked>
+    
     var body: some View {
         ZStack{
             Color.white
@@ -31,7 +34,7 @@ struct PopupView: View {
 
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(0..<4) {_ in
+                        ForEach(0..<3) {_ in
                             VStack {
                                 ForEach(0..<2) {_ in
                                     VStack{
@@ -39,8 +42,13 @@ struct PopupView: View {
                                             .resizable()
                                             .frame(width: 100, height: 100)
                                             .aspectRatio(contentMode: .fit)
+                                            .border(.black, width: 10)
                                         Text("작품 이름 / 설명")
+                                            .font(.system(size: 14, weight: .regular))
+                                            .padding(5)
+                                            .background(Rectangle().fill(Color.white))
                                     }
+                                    .padding(.trailing, 80)
                                 }
                             }
                         }
