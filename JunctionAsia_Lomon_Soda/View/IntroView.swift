@@ -24,7 +24,7 @@ struct IntroView: View {
                     .padding(.bottom, 45)
 
                 HStack (spacing: 28){
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
                         Text("FAVORITES")
                             .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
                             .background(Color.backgroundBlue)
@@ -32,7 +32,7 @@ struct IntroView: View {
                             .foregroundColor(Color.magentaPink)
                     }
 
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
                         Text("VISITATION")
                             .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
                             .background(Color.backgroundBlue)

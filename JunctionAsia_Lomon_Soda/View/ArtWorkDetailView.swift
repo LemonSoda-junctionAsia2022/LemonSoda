@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
-    
+    var artWorkInformation: UnitDatum?
+    var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
     var body: some View {
         ZStack {
             Color.white
-            Color.backgroundBlue.ignoresSafeArea()
+            Color.mint.ignoresSafeArea()
             
-            VStack(spacing: 20){
+            VStack(spacing: 20) {
                 HStack {
                     Spacer()
                     Button(action: {
@@ -28,29 +29,26 @@ struct ArtWorkDetailView: View {
                 
                 HStack(spacing: 20) {
                     VStack(spacing: 10) {
-                        Image("testImage")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                            .border(.black, width: 10)
-                            .aspectRatio(contentMode: .fit)
-                        Text("작품이름: 레몬소다")
+                        AsyncImage(url: URL(string: artWorkInformation?.imageURL ?? "")){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 160,
+                                       height: 160,
+                                       alignment: .center)
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                        }
+                        
+                        Text(artWorkInformation?.name ?? "")
+                            .foregroundColor(.black)
                             .padding(5)
                             .font(.system(size: 14, weight: .regular))
                             .background(Rectangle().fill(Color.white))
                     }
-                    //                    .padding(.leading, 124)
                     
-                    VStack(alignment: .leading ,spacing: 10) {
-                        //                        HStack {
-                        //                            Spacer()
-                        //                            Button(action: {
-                        //                                isShowingInfo = false
-                        //                            }, label: {
-                        //                                Image(systemName: "xmark")
-                        //                            })
-                        //                        }
-                        //                        .padding(.top, 16)
-                        //                        .padding(.)
+                    VStack{
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 10){
@@ -78,7 +76,6 @@ struct ArtWorkDetailView: View {
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
-                        
                         HStack(spacing: 20) {
                             Button(action: {
                                 
@@ -89,16 +86,15 @@ struct ArtWorkDetailView: View {
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.buttonGray))
                             
-                            Button(action: {
-                                
-                            }, label: {
+                            Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
-                            })
+                            }
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.mainBlue))
                         }
                     }
+                    //                    }
                 }
             }
             .padding(.bottom, 20)
@@ -107,3 +103,4 @@ struct ArtWorkDetailView: View {
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
     }
 }
+
