@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
 
     var body: some View {
-        Text("Junction Asia 2022")
+        MainView()
     }
 }
 

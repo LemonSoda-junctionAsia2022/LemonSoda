@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct MainView: View {
+    var height: CGFloat = 2
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.mainColor
+                .ignoresSafeArea()
+                HStack(spacing: 80) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(1..<10) {_ in
+                                VStack(spacing: 20) {
+                                    Image("testImage")
+                                        .resizable()
+                                        .frame(width: 160, height: 160)
+                                    Text("작품 이름 / 설명")
+                                        .background(Rectangle().fill(Color.clear)
+                                            .border(Color.gray)
+                                            .padding(-5))
+                                }
+                                .padding(.leading, 100)
+                            }
+                        }
+                        Rectangle()
+                            .foregroundColor(.yellow)
+                            .frame(height: height)
+                    }
+                }
+                .edgesIgnoringSafeArea(.horizontal)
+            VStack {
+                Spacer()
+                HStack {
+                    Image(systemName: "person")
+                        .resizable()
+                        .frame(width: 60, height: 90)
+                    Spacer()
+                }
+            }
+        }
     }
 }
 
