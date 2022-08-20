@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
-    
+    var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
     var body: some View {
         ZStack {
             Color.white
@@ -38,19 +38,8 @@ struct ArtWorkDetailView: View {
                             .font(.system(size: 14, weight: .regular))
                             .background(Rectangle().fill(Color.white))
                     }
-                    //                    .padding(.leading, 124)
                     
                     VStack(alignment: .leading ,spacing: 10) {
-                        //                        HStack {
-                        //                            Spacer()
-                        //                            Button(action: {
-                        //                                isShowingInfo = false
-                        //                            }, label: {
-                        //                                Image(systemName: "xmark")
-                        //                            })
-                        //                        }
-                        //                        .padding(.top, 16)
-                        //                        .padding(.)
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 10){
@@ -89,12 +78,10 @@ struct ArtWorkDetailView: View {
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.buttonGray))
                             
-                            Button(action: {
-                                
-                            }, label: {
+                            Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
-                            })
+                            }
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.mainBlue))
                         }

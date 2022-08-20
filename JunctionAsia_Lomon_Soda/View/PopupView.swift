@@ -11,7 +11,6 @@ struct PopupView: View {
     @Binding var isShowingFavorite: Bool
     
     var body: some View {
-        
         ZStack{
             Color.white
             
