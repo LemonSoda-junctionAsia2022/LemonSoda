@@ -15,7 +15,11 @@ struct IntroView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             VStack(spacing: 10){
                 Text("NFiTion")
+                    .font(.dunggeummo.title)
+                    .foregroundColor(Color.mainTitleGreen)
                 Text("NFT Exhibition X Junction Asia 2022")
+                    .font(.dunggeummo.subtitle)
+                    .foregroundColor(Color.mainTitleGreen)
 
                 HStack {
                     NavigationLink(destination: MainView()) {
