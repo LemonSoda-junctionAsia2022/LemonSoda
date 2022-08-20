@@ -1,5 +1,5 @@
 //
-//  popupView.swift
+//  PopupView.swift
 //  JunctionAsia_Lomon_Soda
 //
 //  Created by 지준용 on 2022/08/20.
@@ -7,27 +7,35 @@
 
 import SwiftUI
 
-struct popupView: View {
+struct PopupView: View {
+    
+    @Binding var isShowingFavorite: Bool
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color.black
                 .ignoresSafeArea()
                 .opacity(0.2)
-            
-            ZStack{
+            ZStack {
+                Color.white
                 VStack {
                     ScrollView(showsIndicators: false) {
                         HStack {
                             Text("좋아하는 작품 모음")
                                 .font(.system(size: 22, weight: .bold))
+                                .padding(.top, 10)
                             Spacer()
+                            Button(action: {
+                                isShowingFavorite = false
+                            }, label: {
+                                Image(systemName: "xmark")
+                            })
                         }
                         
                         ForEach(0..<4) {_ in
                             HStack(spacing: 40) {
                                 
-                                ForEach(0..<3){_ in
+                                ForEach(0..<3) {_ in
                                     VStack {
                                         Image("testImage")
                                             .resizable()
@@ -40,16 +48,13 @@ struct popupView: View {
                             }
                         }
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
                 }
             }
+            .frame(width: UIScreen.main.bounds.width * 3 / 4, height: UIScreen.main.bounds.height * 3 / 4, alignment: .center)
+            .cornerRadius(15)
         }
-    }
-}
-
-
-
-struct popupView_Previews: PreviewProvider {
-    static var previews: some View {
-        popupView()
     }
 }
