@@ -24,6 +24,9 @@ struct MainView: View {
                 }, label: {
                     Text("버튼")
                 })
+                .fullScreenCover(isPresented: $isShowing){
+                    popupView()
+                }
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
                         VStack(spacing: 20) {
@@ -34,12 +37,10 @@ struct MainView: View {
                                     .frame(width: 160,
                                            height: 160,
                                            alignment: .center)
-
                             } placeholder: {
                                 ProgressView()
                                     .progressViewStyle(.circular)
                             }
-                            
                             Text("\(artWork.name ?? "")")
                                 .background(Rectangle().fill(Color.clear)
                                     .border(Color.gray)

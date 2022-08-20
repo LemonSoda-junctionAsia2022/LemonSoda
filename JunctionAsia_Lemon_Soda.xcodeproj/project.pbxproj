@@ -12,6 +12,7 @@
 		987C0B2028B0AE6700E9E188 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1F28B0AE6700E9E188 /* test3.swift */; };
 		987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2228B0AE8200E9E188 /* MainView.swift */; };
 		987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2528B0B3B300E9E188 /* Color+Extension.swift */; };
+		987C0B2A28B0F97900E9E188 /* popupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2928B0F97900E9E188 /* popupView.swift */; };
 		98F1BE8B28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE8A28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift */; };
 		98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE8C28B0AD9200FA0E61 /* ContentView.swift */; };
 		98F1BE8F28B0AD9200FA0E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F1BE8E28B0AD9200FA0E61 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		987C0B1F28B0AE6700E9E188 /* test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
 		987C0B2228B0AE8200E9E188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		987C0B2528B0B3B300E9E188 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		987C0B2928B0F97900E9E188 /* popupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupView.swift; sourceTree = "<group>"; };
 		98F1BE8728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionAsia_Lomon_Soda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F1BE8A28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunctionAsia_Lemon_SodaApp.swift; sourceTree = "<group>"; };
 		98F1BE8C28B0AD9200FA0E61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				987C0B2228B0AE8200E9E188 /* MainView.swift */,
+				987C0B2928B0F97900E9E188 /* popupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F1BE9428B0AD9200FA0E61 /* Persistence.swift in Sources */,
+				987C0B2A28B0F97900E9E188 /* popupView.swift in Sources */,
 				987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */,
 				987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */,
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
