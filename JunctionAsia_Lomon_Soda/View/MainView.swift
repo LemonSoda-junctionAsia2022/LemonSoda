@@ -12,6 +12,7 @@ struct MainView: View {
     @State private var isShowingFavorite = false
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
+    @State private var indexPath: Int = 0
     var height: CGFloat = 2
     
     var body: some View {
@@ -20,18 +21,13 @@ struct MainView: View {
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             
-            VStack {
-                Button(action: {
-                    isShowingFavorite = true
-                }, label: {
-                    Text("버튼")
-                })
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
                         if artWork.imageURL?.isEmpty == false {
                             VStack(spacing: 20) {
                                 Button(action: {
                                     isShowingInfo = true
+                                    indexPath = artWork.id
                                 }, label: {
                                     AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
                                         image
@@ -55,7 +51,6 @@ struct MainView: View {
                     }
                 }
                 .edgesIgnoringSafeArea(.horizontal)
-            }
             VStack {
                 Spacer()
                 HStack {
@@ -65,10 +60,9 @@ struct MainView: View {
                     Spacer()
                 }
             }
-            if isShowingFavorite {
-                PopupView(isShowingFavorite: $isShowingFavorite)
-            } else if isShowingInfo {
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo)
+            if isShowingInfo {
+                let passingData = artWorks.filter({$0.id == indexPath}).first
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, artWorkInformation: passingData)
             }
         }
     }
