@@ -27,7 +27,7 @@ struct MainView: View {
                 })
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
-                        if artWork.imageURL?.isEmpty != nil {
+                        if artWork.imageURL?.isEmpty == false {
                             VStack(spacing: 20) {
                                 Button(action: {
                                     isShowingInfo = true
