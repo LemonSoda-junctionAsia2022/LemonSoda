@@ -28,6 +28,7 @@ struct MainView: View {
                             VStack(alignment: .trailing, spacing: 10) {
                                 Button(action: {
                                     isShowingInfo = true
+                                    indexPath = artWork.id
                                 }, label: {
                                     AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
                                         image
@@ -41,6 +42,7 @@ struct MainView: View {
                                     }
                                 })
                                 Text("\(artWork.name ?? "")")
+                                    .foregroundColor(.black)
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                                     .background(Rectangle().fill(Color.white))
                                     .multilineTextAlignment(.trailing)
@@ -51,10 +53,9 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.horizontal)
             }
             rabbit()
-            if isShowingFavorite {
-                PopupView(isShowingFavorite: $isShowingFavorite)
-            } else if isShowingInfo {
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo)
+            if isShowingInfo {
+                let passingData = artWorks.filter({$0.id == indexPath}).first
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, artWorkInformation: passingData)
             }
         }
     }

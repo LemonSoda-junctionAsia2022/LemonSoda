@@ -18,7 +18,7 @@ struct IntroView: View {
                 Text("NFT Exhibition X Junction Asia 2022")
 
                 HStack {
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
                         Text("START")
                             .bold()
                             .padding(10)
