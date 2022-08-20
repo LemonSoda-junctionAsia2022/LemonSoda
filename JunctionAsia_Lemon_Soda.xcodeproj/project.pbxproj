@@ -18,6 +18,9 @@
 		98F1BE9228B0AD9200FA0E61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F1BE9128B0AD9200FA0E61 /* Preview Assets.xcassets */; };
 		98F1BE9428B0AD9200FA0E61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9328B0AD9200FA0E61 /* Persistence.swift */; };
 		98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */; };
+		A90CCD3728B0D82500A5E2D6 /* ArtWorkInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CCD3628B0D82500A5E2D6 /* ArtWorkInformation.swift */; };
+		A90CCD3928B0D85C00A5E2D6 /* JsonFileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CCD3828B0D85C00A5E2D6 /* JsonFileLoading.swift */; };
+		A90CCD3B28B0D8CD00A5E2D6 /* NFTDataSet.json in Resources */ = {isa = PBXBuildFile; fileRef = A90CCD3A28B0D8CD00A5E2D6 /* NFTDataSet.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		98F1BE9128B0AD9200FA0E61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98F1BE9328B0AD9200FA0E61 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		98F1BE9628B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JunctionAsia_Lomon_Soda.xcdatamodel; sourceTree = "<group>"; };
+		A90CCD3628B0D82500A5E2D6 /* ArtWorkInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkInformation.swift; sourceTree = "<group>"; };
+		A90CCD3828B0D85C00A5E2D6 /* JsonFileLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFileLoading.swift; sourceTree = "<group>"; };
+		A90CCD3A28B0D8CD00A5E2D6 /* NFTDataSet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NFTDataSet.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				987C0B1B28B0AE5900E9E188 /* test1.swift */,
+				A90CCD3628B0D82500A5E2D6 /* ArtWorkInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -67,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				987C0B1F28B0AE6700E9E188 /* test3.swift */,
+				A90CCD3828B0D85C00A5E2D6 /* JsonFileLoading.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 				987C0B1A28B0AE4100E9E188 /* ViewModel */,
 				987C0B2128B0AE6F00E9E188 /* View */,
 				98F1BE9328B0AD9200FA0E61 /* Persistence.swift */,
+				A90CCD3A28B0D8CD00A5E2D6 /* NFTDataSet.json */,
 				98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */,
 				98F1BE9028B0AD9200FA0E61 /* Preview Content */,
 			);
@@ -178,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90CCD3B28B0D8CD00A5E2D6 /* NFTDataSet.json in Resources */,
 				98F1BE9228B0AD9200FA0E61 /* Preview Assets.xcassets in Resources */,
 				98F1BE8F28B0AD9200FA0E61 /* Assets.xcassets in Resources */,
 			);
@@ -195,8 +205,10 @@
 				987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */,
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
 				987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */,
+				A90CCD3928B0D85C00A5E2D6 /* JsonFileLoading.swift in Sources */,
 				98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */,
 				987C0B2028B0AE6700E9E188 /* test3.swift in Sources */,
+				A90CCD3728B0D82500A5E2D6 /* ArtWorkInformation.swift in Sources */,
 				987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */,
 				98F1BE8B28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift in Sources */,
 			);
