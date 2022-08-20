@@ -8,12 +8,12 @@
 import SwiftUI
 
 extension Font {
-    struct DungGeumMo {
-        let title = Font.custom("DungGeumMo", size: 60)
-        let subtitle = Font.custom("DungGeumMo", size: 24)
-        let favoritesButton = Font.custom("DungGeumMo", size: 30)
-        let visitationButton = Font.custom("DungGeumMo", size: 30)
+    struct DungGeunMo {
+        let title = Font.custom("DungGeunMo", size: 60)
+        let subtitle = Font.custom("DungGeunMo", size: 24)
+        let favoritesButton = Font.custom("DungGeunMo", size: 30)
+        let visitationButton = Font.custom("DungGeunMo", size: 30)
     }
 
-    static let dunggeummo = DungGeumMo()
+    static let dunggeummo = DungGeunMo()
 }
