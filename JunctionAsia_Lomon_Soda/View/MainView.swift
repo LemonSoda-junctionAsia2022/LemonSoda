@@ -44,11 +44,10 @@ struct MainView: View {
                                             .progressViewStyle(.circular)
                                     }
                                 })
-
                                 Text("\(artWork.name ?? "")")
-                                    .background(Rectangle().fill(Color.clear)
-                                        .border(Color.gray)
-                                    )
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    .background(Rectangle().fill(Color.white))
+                                    .multilineTextAlignment(.trailing)
                             }
                         }
                     }
