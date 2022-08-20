@@ -10,8 +10,8 @@
 		3820C08C28B1696500A74281 /* GifHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820C08B28B1696500A74281 /* GifHelper.swift */; };
 		3820C08E28B16A8600A74281 /* rabbit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3820C08D28B16A8600A74281 /* rabbit.gif */; };
 		3820C09128B16B7F00A74281 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3820C09028B16B7F00A74281 /* FLAnimatedImage */; };
-		3820C09728B1843D00A74281 /* DungGeumMo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3820C09628B1843D00A74281 /* DungGeumMo.otf */; };
 		3820C09A28B1855700A74281 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820C09928B1855700A74281 /* Font+Extension.swift */; };
+		38AF99FD28B18A62007FB373 /* DungGeunMo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38AF99FC28B18A62007FB373 /* DungGeunMo.otf */; };
 		9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */; };
 		987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */; };
 		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
@@ -32,9 +32,9 @@
 /* Begin PBXFileReference section */
 		3820C08B28B1696500A74281 /* GifHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifHelper.swift; sourceTree = "<group>"; };
 		3820C08D28B16A8600A74281 /* rabbit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rabbit.gif; sourceTree = "<group>"; };
-		3820C09628B1843D00A74281 /* DungGeumMo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DungGeumMo.otf; sourceTree = "<group>"; };
 		3820C09828B1844F00A74281 /* JunctionAsia-Lomon-Soda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JunctionAsia-Lomon-Soda-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3820C09928B1855700A74281 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		38AF99FC28B18A62007FB373 /* DungGeunMo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DungGeunMo.otf; sourceTree = "<group>"; };
 		9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkDetailView.swift; sourceTree = "<group>"; };
 		987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDatum.swift; sourceTree = "<group>"; };
 		987C0B1D28B0AE6000E9E188 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				3820C09828B1844F00A74281 /* JunctionAsia-Lomon-Soda-Info.plist */,
 				98F1BE8A28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift */,
 				98F1BE8C28B0AD9200FA0E61 /* ContentView.swift */,
-				3820C09628B1843D00A74281 /* DungGeumMo.otf */,
+				38AF99FC28B18A62007FB373 /* DungGeunMo.otf */,
 				3820C08D28B16A8600A74281 /* rabbit.gif */,
 				98F1BE8E28B0AD9200FA0E61 /* Assets.xcassets */,
 				987C0B1828B0AE2E00E9E188 /* Global */,
@@ -220,7 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3820C09728B1843D00A74281 /* DungGeumMo.otf in Resources */,
+				38AF99FD28B18A62007FB373 /* DungGeunMo.otf in Resources */,
 				A9EBA3C828B131A900DF5A97 /* NFTDataSet.json in Resources */,
 				98F1BE9228B0AD9200FA0E61 /* Preview Assets.xcassets in Resources */,
 				3820C08E28B16A8600A74281 /* rabbit.gif in Resources */,
