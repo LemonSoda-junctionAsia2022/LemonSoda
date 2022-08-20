@@ -8,33 +8,42 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var artWorks : [UnitDatum] = load("NFTDataSet.json")
     var height: CGFloat = 2
     var body: some View {
         ZStack {
             Color.mainColor
                 .ignoresSafeArea()
-                HStack(spacing: 80) {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(1..<10) {_ in
-                                VStack(spacing: 20) {
-                                    Image("testImage")
+            HStack(spacing: 80) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(artWorks, id: \.id) { artWork in
+                            VStack(spacing: 20) {
+                                AsyncImage(url: URL(string: artWork.imageURL ?? "")) { image in
+                                    image
                                         .resizable()
-                                        .frame(width: 160, height: 160)
-                                    Text("작품 이름 / 설명")
-                                        .background(Rectangle().fill(Color.clear)
-                                            .border(Color.gray)
-                                            .padding(-5))
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.25, alignment: .center)
+
+                                } placeholder: {
+                                    ProgressView()
+                                        .progressViewStyle(.circular)
                                 }
-                                .padding(.leading, 100)
+
+                                Text("\(artWork.name ?? "")")
+                                    .background(Rectangle().fill(Color.clear)
+                                        .border(Color.gray)
+                                    )
                             }
+                            .padding(.leading, 100)
                         }
-                        Rectangle()
-                            .foregroundColor(.yellow)
-                            .frame(height: height)
                     }
+                    Rectangle()
+                        .foregroundColor(.yellow)
+                        .frame(height: height)
                 }
-                .edgesIgnoringSafeArea(.horizontal)
+            }
+            .edgesIgnoringSafeArea(.horizontal)
             VStack {
                 Spacer()
                 HStack {
@@ -51,5 +60,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
