@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3820C09128B16B7F00A74281 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3820C09028B16B7F00A74281 /* FLAnimatedImage */; };
 		9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */; };
 		987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* test1.swift */; };
 		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3820C09128B16B7F00A74281 /* FLAnimatedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = JunctionAsia_Lomon_Soda;
+			packageProductDependencies = (
+				3820C09028B16B7F00A74281 /* FLAnimatedImage */,
+			);
 			productName = JunctionAsia_Lomon_Soda;
 			productReference = 98F1BE8728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 98F1BE7E28B0AD9200FA0E61;
+			packageReferences = (
+				3820C08F28B16B7F00A74281 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+			);
 			productRefGroup = 98F1BE8828B0AD9200FA0E61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +421,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3820C08F28B16B7F00A74281 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3820C09028B16B7F00A74281 /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3820C08F28B16B7F00A74281 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */ = {
