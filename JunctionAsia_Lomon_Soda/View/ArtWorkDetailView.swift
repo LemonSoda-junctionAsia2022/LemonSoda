@@ -12,40 +12,98 @@ struct ArtWorkDetailView: View {
     
     var body: some View {
         ZStack {
-            Color.black
-                .ignoresSafeArea()
-                .opacity(0.2)
-            ZStack {
-                Color.white
+            Color.white
+            Color.backgroundBlue.ignoresSafeArea()
+            
+            VStack(spacing: 20){
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        isShowingInfo = false
+                    }, label: {
+                        Image(systemName: "xmark")
+                            .padding(.trailing, 20)
+                    })
+                }
+                
                 HStack(spacing: 20) {
-                    Image("testImage")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .aspectRatio(contentMode: .fit)
+                    VStack(spacing: 10) {
+                        Image("testImage")
+                            .resizable()
+                            .frame(width: 160, height: 160)
+                            .border(.black, width: 10)
+                            .aspectRatio(contentMode: .fit)
+                        Text("작품이름: 레몬소다")
+                            .padding(5)
+                            .font(.system(size: 14, weight: .regular))
+                            .background(Rectangle().fill(Color.white))
+                    }
+                    //                    .padding(.leading, 124)
                     
                     VStack(alignment: .leading ,spacing: 10) {
-                        HStack {
+                        //                        HStack {
+                        //                            Spacer()
+                        //                            Button(action: {
+                        //                                isShowingInfo = false
+                        //                            }, label: {
+                        //                                Image(systemName: "xmark")
+                        //                            })
+                        //                        }
+                        //                        .padding(.top, 16)
+                        //                        .padding(.)
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 10){
+                                    Text("NFT number")
+                                    Text("Author")
+                                    Text("Created Date")
+                                    Text("Description")
+                                }
+                                .foregroundColor(.mainBlue)
+                                .padding(.top, 40)
+                                .padding(.leading, 30)
+                                .padding(.trailing, 15)
+                                
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("NFT번호")
+                                    Text("작가")
+                                    Text("제작일")
+                                    Text("설명")
+                                }
+                                .padding(.top, 40)
+                                .padding(.trailing, 30)
+                            }
                             Spacer()
-                            Button(action: {
-                                isShowingInfo = false
-                            }, label: {
-                                Image(systemName: "xmark")
-                            })
                         }
-                        .padding(.top, 16)
+                        .frame(width: 420, height: 195, alignment: .leading)
+                        .background(.white)
+                        .cornerRadius(10)
                         
-                        Text("작품이름: 레몬소다")
-                        Text("작가: 에디")
-                        Text("제작일자: 오늘!")
-                        Text("설명: 어쩌구 저쩌구")
-                        Spacer()
+                        HStack(spacing: 20) {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Like  ♥︎")
+                                    .foregroundColor(.buttonTextGray)
+                            })
+                            .frame(width: 200, height: 40, alignment: .center)
+                            .background(Rectangle().fill(Color.buttonGray))
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("More Details and Buy")
+                                    .foregroundColor(.white)
+                            })
+                            .frame(width: 200, height: 40, alignment: .center)
+                            .background(Rectangle().fill(Color.mainBlue))
+                        }
                     }
-                    
                 }
-                .padding(.horizontal, 16)
             }
-            .frame(width: UIScreen.main.bounds.width * 3 / 4, height: UIScreen.main.bounds.height * 3 / 4, alignment: .center)
-            .cornerRadius(15)
+            .padding(.bottom, 20)
+            .padding(.horizontal, 16)
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
     }
 }
