@@ -22,35 +22,40 @@ struct MainView: View {
                 .ignoresSafeArea()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
-            HStack(spacing: 80) {
-                ForEach(artWorks, id: \.id) { artWork in
-                    if artWork.imageURL?.isEmpty == false {
-                        VStack(alignment: .trailing, spacing: 10) {
-                            Button(action: {
-                                isShowingInfo = true
-                                indexPath = artWork.id
-                            }, label: {
-                                AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
-                                    image
-                                        .resizable()
-                                        .frame(width: 160, height: 160, alignment: .trailing)
-                                        .aspectRatio(contentMode: .fit)
-                                        .border(Color.black, width: 8)
-                                } placeholder: {
-                                    ProgressView()
-                                        .progressViewStyle(.circular)
-                                }
-                            })
-                            Text("\(artWork.name ?? "")")
-                                .foregroundColor(.black)
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                .background(Rectangle().fill(Color.white))
-                                .multilineTextAlignment(.trailing)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 80) {
+                    Spacer()
+                        .frame(width: 160, height: 160, alignment: .trailing)
+                    ForEach(artWorks, id: \.id) { artWork in
+                        if artWork.imageURL?.isEmpty == false {
+                            VStack(alignment: .trailing, spacing: 10) {
+                                Button(action: {
+                                    isShowingInfo = true
+                                    indexPath = artWork.id
+                                }, label: {
+                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                        image
+                                            .resizable()
+                                            .frame(width: 160, height: 160, alignment: .trailing)
+                                            .aspectRatio(contentMode: .fit)
+                                            .border(Color.black, width: 8)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .progressViewStyle(.circular)
+                                    }
+                                })
+                                Text("\(artWork.name ?? "")")
+                                    .foregroundColor(.black)
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    .background(Rectangle().fill(Color.white))
+                                    .multilineTextAlignment(.trailing)
+                            }
                         }
                     }
                 }
+                .edgesIgnoringSafeArea(.horizontal)
             }
-            .edgesIgnoringSafeArea(.horizontal)
+            .padding(.trailing, 30)
             rabbit()
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
