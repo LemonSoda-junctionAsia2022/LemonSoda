@@ -27,27 +27,29 @@ struct MainView: View {
                 })
                 HStack(spacing: 80) {
                     ForEach(artWorks, id: \.id) { artWork in
-                        VStack(spacing: 20) {
-                            Button(action: {
-                                isShowingInfo = true
-                            }, label: {
-                                AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 160,
-                                               height: 160,
-                                               alignment: .center)
-                                } placeholder: {
-                                    ProgressView()
-                                        .progressViewStyle(.circular)
-                                }
-                            })
-                            
-                            Text("\(artWork.name ?? "")")
-                                .background(Rectangle().fill(Color.clear)
-                                    .border(Color.gray)
-                                )
+                        if artWork.imageURL?.isEmpty != nil {
+                            VStack(spacing: 20) {
+                                Button(action: {
+                                    isShowingInfo = true
+                                }, label: {
+                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 160,
+                                                   height: 160,
+                                                   alignment: .center)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .progressViewStyle(.circular)
+                                    }
+                                })
+
+                                Text("\(artWork.name ?? "")")
+                                    .background(Rectangle().fill(Color.clear)
+                                        .border(Color.gray)
+                                    )
+                            }
                         }
                     }
                 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */; };
-		987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* test1.swift */; };
+		987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */; };
 		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
 		987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1F28B0AE6700E9E188 /* LoadData.swift */; };
 		987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2228B0AE8200E9E188 /* MainView.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkDetailView.swift; sourceTree = "<group>"; };
-		987C0B1B28B0AE5900E9E188 /* test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
+		987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDatum.swift; sourceTree = "<group>"; };
 		987C0B1D28B0AE6000E9E188 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		987C0B1F28B0AE6700E9E188 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		987C0B2228B0AE8200E9E188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		987C0B1928B0AE3800E9E188 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				987C0B1B28B0AE5900E9E188 /* test1.swift */,
+				987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 				987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */,
 				987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */,
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
-				987C0B1C28B0AE5900E9E188 /* test1.swift in Sources */,
+				987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */,
 				98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */,
 				987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */,
 				987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */,
@@ -339,7 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JunctionAsia_Lomon_Soda/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = YYP248S73Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JunctionAsia_Lomon_Soda/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = YYP248S73Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
