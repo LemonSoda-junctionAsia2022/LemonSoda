@@ -12,6 +12,7 @@ struct MainView: View {
     @State private var isShowingFavorite = false
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
+    @State private var indexPath: Int = 0
     var height: CGFloat = 2
     
     var body: some View {
