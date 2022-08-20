@@ -13,4 +13,5 @@ extension Color {
     static let mainBlue: Color = Color(red: 0/255, green: 25/255, blue: 255/255)
     static let buttonGray: Color = Color(red: 215/255, green: 215/255, blue: 215/255)
     static let buttonTextGray: Color = Color(red: 97/255, green: 95/255, blue: 95/255)
+    static let mainTitleGreen: Color = Color(red: 48/255, green: 255/255, blue: 41/255)
 }
