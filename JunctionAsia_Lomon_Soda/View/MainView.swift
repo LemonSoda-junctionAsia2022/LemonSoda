@@ -21,8 +21,11 @@ struct MainView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            VStack {
+
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 80) {
+                    Spacer()
+                        .frame(width: 160, height: 160, alignment: .trailing)
                     ForEach(artWorks, id: \.id) { artWork in
                         if artWork.imageURL?.isEmpty == false {
                             VStack(alignment: .trailing, spacing: 10) {
@@ -52,6 +55,7 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.horizontal)
             }
+            .padding(.trailing, 30)
             rabbit()
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
