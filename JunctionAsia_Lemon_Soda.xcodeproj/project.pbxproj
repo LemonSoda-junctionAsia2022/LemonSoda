@@ -22,7 +22,7 @@
 		98F1BE8F28B0AD9200FA0E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F1BE8E28B0AD9200FA0E61 /* Assets.xcassets */; };
 		98F1BE9228B0AD9200FA0E61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F1BE9128B0AD9200FA0E61 /* Preview Assets.xcassets */; };
 		98F1BE9428B0AD9200FA0E61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9328B0AD9200FA0E61 /* Persistence.swift */; };
-		98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */; };
+		98F1BE9728B0AD9200FA0E61 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98F1BE9528B0AD9200FA0E61 /* Model.xcdatamodeld */; };
 		A9EBA3C828B131A900DF5A97 /* NFTDataSet.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EBA3C728B131A900DF5A97 /* NFTDataSet.json */; };
 		A9EBA3CA28B16AD300DF5A97 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C928B16AD300DF5A97 /* IntroView.swift */; };
 /* End PBXBuildFile section */
@@ -134,7 +134,7 @@
 				987C0B1A28B0AE4100E9E188 /* ViewModel */,
 				987C0B2128B0AE6F00E9E188 /* View */,
 				98F1BE9328B0AD9200FA0E61 /* Persistence.swift */,
-				98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */,
+				98F1BE9528B0AD9200FA0E61 /* Model.xcdatamodeld */,
 				98F1BE9028B0AD9200FA0E61 /* Preview Content */,
 			);
 			path = JunctionAsia_Lomon_Soda;
@@ -232,7 +232,7 @@
 				98F1BE8D28B0AD9200FA0E61 /* ContentView.swift in Sources */,
 				987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */,
 				A9EBA3CA28B16AD300DF5A97 /* IntroView.swift in Sources */,
-				98F1BE9728B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld in Sources */,
+				98F1BE9728B0AD9200FA0E61 /* Model.xcdatamodeld in Sources */,
 				987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */,
 				987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */,
 				3820C08C28B1696500A74281 /* GifHelper.swift in Sources */,
@@ -462,13 +462,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		98F1BE9528B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodeld */ = {
+		98F1BE9528B0AD9200FA0E61 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				98F1BE9628B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodel */,
 			);
 			currentVersion = 98F1BE9628B0AD9200FA0E61 /* JunctionAsia_Lomon_Soda.xcdatamodel */;
-			path = JunctionAsia_Lomon_Soda.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
