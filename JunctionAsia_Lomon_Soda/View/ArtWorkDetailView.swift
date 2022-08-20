@@ -15,8 +15,8 @@ struct ArtWorkDetailView: View {
         ZStack {
             Color.white
             Color.mint.ignoresSafeArea()
-
-            VStack(spacing: 20){
+            
+            VStack(spacing: 20) {
                 HStack {
                     Spacer()
                     Button(action: {
@@ -26,7 +26,7 @@ struct ArtWorkDetailView: View {
                             .padding(.trailing, 20)
                     })
                 }
-
+                
                 HStack(spacing: 20) {
                     VStack(spacing: 10) {
                         AsyncImage(url: URL(string: artWorkInformation?.imageURL ?? "")){ image in
@@ -40,14 +40,15 @@ struct ArtWorkDetailView: View {
                             ProgressView()
                                 .progressViewStyle(.circular)
                         }
-
+                        
                         Text(artWorkInformation?.name ?? "")
                             .foregroundColor(.black)
                             .padding(5)
                             .font(.system(size: 14, weight: .regular))
                             .background(Rectangle().fill(Color.white))
                     }
-
+                    
+                    VStack{
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 10){
@@ -60,7 +61,7 @@ struct ArtWorkDetailView: View {
                                 .padding(.top, 40)
                                 .padding(.leading, 30)
                                 .padding(.trailing, 15)
-
+                                
                                 VStack(alignment: .leading, spacing: 10) {
                                     Text("NFT번호")
                                     Text("작가")
@@ -75,17 +76,16 @@ struct ArtWorkDetailView: View {
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
-
                         HStack(spacing: 20) {
                             Button(action: {
-
+                                
                             }, label: {
                                 Text("Like  ♥︎")
                                     .foregroundColor(.buttonTextGray)
                             })
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.buttonGray))
-              
+                            
                             Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
@@ -94,6 +94,7 @@ struct ArtWorkDetailView: View {
                             .background(Rectangle().fill(Color.mainBlue))
                         }
                     }
+                    //                    }
                 }
             }
             .padding(.bottom, 20)
@@ -102,3 +103,4 @@ struct ArtWorkDetailView: View {
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
     }
 }
+
