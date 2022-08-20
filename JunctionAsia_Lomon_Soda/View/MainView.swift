@@ -56,21 +56,19 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.horizontal)
             }
-            VStack {
-                Spacer()
-                HStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 60, height: 90)
-                    Spacer()
-                }
-            }
+            rabbit()
             if isShowingFavorite {
                 PopupView(isShowingFavorite: $isShowingFavorite)
             } else if isShowingInfo {
                 ArtWorkDetailView(isShowingInfo: $isShowingInfo)
             }
         }
+    }
+
+    private func rabbit() -> some View {
+        GifView(fileName: "rabbit")
+            .frame(width: 450, height: 225, alignment: .center)
+            .offset(x: -300, y: 80)
     }
 }
 
