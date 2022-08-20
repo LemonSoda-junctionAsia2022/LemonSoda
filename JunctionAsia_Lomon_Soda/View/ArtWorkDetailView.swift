@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
+    var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
     var body: some View {
         ZStack {
             Color.white
-            Color.backgroundBlue.ignoresSafeArea()
-            
+            Color.mint.ignoresSafeArea()
+
             VStack(spacing: 20){
                 HStack {
                     Spacer()
@@ -25,21 +26,28 @@ struct ArtWorkDetailView: View {
                             .padding(.trailing, 20)
                     })
                 }
-                
+
                 HStack(spacing: 20) {
                     VStack(spacing: 10) {
-                        Image("testImage")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                            .border(.black, width: 10)
-                            .aspectRatio(contentMode: .fit)
-                        Text("작품이름: 레몬소다")
+                        AsyncImage(url: URL(string: artWorkInformation?.imageURL ?? "")){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 160,
+                                       height: 160,
+                                       alignment: .center)
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                        }
+
+                        Text(artWorkInformation?.name ?? "")
+                            .foregroundColor(.black)
                             .padding(5)
                             .font(.system(size: 14, weight: .regular))
                             .background(Rectangle().fill(Color.white))
                     }
-                    
-                    VStack(alignment: .leading ,spacing: 10) {
+
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 10){
@@ -52,7 +60,7 @@ struct ArtWorkDetailView: View {
                                 .padding(.top, 40)
                                 .padding(.leading, 30)
                                 .padding(.trailing, 15)
-                                
+
                                 VStack(alignment: .leading, spacing: 10) {
                                     Text("NFT번호")
                                     Text("작가")
@@ -67,17 +75,17 @@ struct ArtWorkDetailView: View {
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
-                        
+
                         HStack(spacing: 20) {
                             Button(action: {
-                                
+
                             }, label: {
                                 Text("Like  ♥︎")
                                     .foregroundColor(.buttonTextGray)
                             })
                             .frame(width: 200, height: 40, alignment: .center)
                             .background(Rectangle().fill(Color.buttonGray))
-                            
+              
                             Link(destination: URL(string: permalinkDefault)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
