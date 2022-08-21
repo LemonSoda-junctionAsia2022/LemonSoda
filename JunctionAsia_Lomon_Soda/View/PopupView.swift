@@ -52,7 +52,7 @@ struct PopupView: View {
 
     private func popupViewLabel() -> some View {
         HStack {
-            Text("좋아하는 사진 모음")
+            Text("FAVORITE ARTS")
                 .font(.dunggeummo.subtitle)
                 .foregroundColor(Color.mainBlue)
             Spacer()
@@ -65,6 +65,6 @@ struct PopupView: View {
                     .frame(width: 20, height: 20, alignment: .trailing)
             })
         }
-        .padding(EdgeInsets(top: 30, leading: 30, bottom: 300, trailing: 40))
+        .padding(EdgeInsets(top: 40, leading: 30, bottom: 300, trailing: 40))
     }
 }
