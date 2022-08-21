@@ -26,7 +26,7 @@ struct PopupView: View {
             
             VStack {
                 HStack {
-                    Text("좋아하는 사진 모음")
+//                    Text("좋아하는 사진 모음")
                     Spacer()
                     Button(action: {
                         isShowingFavorite = false

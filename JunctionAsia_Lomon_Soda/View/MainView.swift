@@ -62,7 +62,7 @@ struct MainView: View {
             rabbit()
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, likeColor: $likeColor, artWorkInformation: passingData)
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, likeColor: likeColor, artWorkInformation: passingData)
             }
         }
     }
