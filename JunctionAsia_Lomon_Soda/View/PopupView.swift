@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PopupView: View {
     @Binding var isShowingFavorite: Bool
-    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
     var artWorkInformation: UnitDatum?

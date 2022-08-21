@@ -13,7 +13,6 @@ struct MainView: View {
     @State private var arts: [UnitDatum] = [UnitDatum]()
     @State private var indexPath: Int = 0
     @Binding var isShowingFavorite: Bool
-    @Environment(\.managedObjectContext) private var viewContext
 
     var height: CGFloat = 2
     
@@ -66,7 +65,7 @@ struct MainView: View {
             rabbit()
             
             if isShowingInfo {
-                let passingData = artWorks.filter({$0.id == indexPath}).first
+                let passingData = artWorks.filter( {$0.id == indexPath }).first
                 ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, artWorkInformation: passingData)
             }
         }
