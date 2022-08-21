@@ -64,26 +64,26 @@ struct ArtWorkDetailView: View {
                                 VStack(alignment: .leading, spacing: 10){
                                     HStack{
                                         Text("NFT ID:")
-                                            .font(.system(size: 20, weight: .black))
+                                            .font(.dunggeummo.subtitle)
                                             .foregroundColor(.mainBlue)
                                         Text("\(artWorkInformation!.id)")
                                     }
                                     HStack{
                                         Text("Creator:")
-                                            .font(.system(size: 20, weight: .black))
+                                            .font(.dunggeummo.subtitle)
                                             .foregroundColor(.mainBlue)
                                         Text(artWorkInformation?.creator.user?.username ?? "Unknown")
                                     }
                                     HStack{
                                         Text("CreatedDate :")
-                                            .font(.system(size: 20, weight: .black))
+                                            .font(.dunggeummo.subtitle)
                                             .foregroundColor(.mainBlue)
                                         Text(artWorkInformation?.collection.createdDate.dropLast(16) ?? "Unknown")
                                     }
                                     HStack{
                                         Text("Short Description:")
+                                            .font(.dunggeummo.subtitle)
                                             .foregroundColor(.mainBlue)
-                                            .font(.system(size: 20, weight: .black))
                                         Text(artWorkInformation?.collection.collectionDescription ?? "Unknown")
                                     }
                                 }
