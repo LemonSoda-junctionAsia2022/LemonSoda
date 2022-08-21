@@ -11,6 +11,7 @@ struct PopupView: View {
     @Binding var isShowingFavorite: Bool
 //    @Binding var likeColor: Bool
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
 
 //    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
     var artWorkInformation: UnitDatum?
@@ -38,6 +39,7 @@ struct PopupView: View {
                     
                 }
                 .padding(.horizontal, 16)
+                    dismiss()
             
                 HStack{
                     ForEach(0..<favorites.count) { num in
@@ -60,8 +62,6 @@ struct PopupView: View {
                         }
                     }
                 }
-            }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .leading)
         }
     }
 }
