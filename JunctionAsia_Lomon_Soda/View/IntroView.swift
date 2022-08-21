@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroView: View {
+    @State var isShowingFavorite = false
     var body: some View {
         ZStack{
             Image("MainViewBackGround")
@@ -25,7 +26,7 @@ struct IntroView: View {
                     .padding(.bottom, 45)
 
                 HStack (spacing: 28){
-                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
+                    NavigationLink(destination: PopupView(isShowingFavorite: $isShowingFavorite).navigationBarHidden(true)) {
                         Text("FAVORITES")
                             .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
                             .background(Color.backgroundBlue)
@@ -33,7 +34,7 @@ struct IntroView: View {
                             .foregroundColor(Color.magentaPink)
                     }
 
-                    NavigationLink(destination: MainView().navigationBarHidden(true)) {
+                    NavigationLink(destination: MainView(isShowingFavorite: $isShowingFavorite).navigationBarHidden(true)) {
                         Text("VISITATION")
                             .padding(EdgeInsets(top: 8, leading: 55, bottom: 8, trailing: 55))
                             .background(Color.backgroundBlue)
@@ -50,12 +51,5 @@ struct IntroView: View {
             .resizable()
             .frame(width: 274, height: 203, alignment: .center)
             .offset(x: -300, y: 50)
-    }
-}
-
-struct IntroView_Previews: PreviewProvider {
-    static var previews: some View {
-        IntroView()
-            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

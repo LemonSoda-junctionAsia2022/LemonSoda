@@ -9,10 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     @State private var artWorks: [UnitDatum] = load("NFTDataSet.json")
-    @State private var isShowingFavorite = false
+    @Binding var isShowingFavorite: Bool
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
     @State private var indexPath: Int = 0
+    @State var likeColor = false
+    @Environment(\.managedObjectContext) private var viewContext
+
     var height: CGFloat = 2
     
     var body: some View {
@@ -59,7 +62,7 @@ struct MainView: View {
             rabbit()
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, artWorkInformation: passingData)
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, likeColor: $likeColor, artWorkInformation: passingData)
             }
         }
     }
@@ -68,12 +71,5 @@ struct MainView: View {
         GifView(fileName: "rabbit")
             .frame(width: 450, height: 225, alignment: .center)
             .offset(x: -300, y: 80)
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

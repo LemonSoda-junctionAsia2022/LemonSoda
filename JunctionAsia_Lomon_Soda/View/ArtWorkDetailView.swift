@@ -10,10 +10,11 @@ import SwiftUI
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
     @Binding var isShowingFavorite: Bool
-    @State var likeColor = false
+    @Binding var likeColor: Bool
     var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
-    
+    @Environment(\.managedObjectContext) private var viewContext
+
     @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
     var liked: FetchedResults<Liked>
     
@@ -42,6 +43,7 @@ struct ArtWorkDetailView: View {
                                 .frame(width: 200,
                                        height: 200,
                                        alignment: .center)
+                                .border(.black, width: 10)
                         } placeholder: {
                             ProgressView()
                                 .progressViewStyle(.circular)
@@ -69,13 +71,13 @@ struct ArtWorkDetailView: View {
                                         Text("Creator:")
                                             .font(.system(size: 20, weight: .black))
                                             .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.creator.address ?? "Unknown")
+                                        Text(artWorkInformation?.creator.user?.username ?? "Unknown")
                                     }
                                     HStack{
                                         Text("CreatedDate :")
                                             .font(.system(size: 20, weight: .black))
                                             .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.collection.createdDate ?? "Unknown")
+                                        Text(artWorkInformation?.collection.createdDate.dropLast(16) ?? "Unknown")
                                     }
                                     HStack{
                                         Text("Short Description:")
@@ -93,13 +95,17 @@ struct ArtWorkDetailView: View {
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
+                        
                         HStack(spacing: 20) {
                             if !likeColor {
                                 Button(action: {
                                     isShowingFavorite = true
-//                                    favorites.append(artWorkInformation!)
+                                    favorites.append(artWorkInformation!)
                                     likeColor.toggle()
-    //                                coreDataManager.createLikeData(jsonObject: )
+//                                    coreDataManager.createLikeData(jsonObject: artWorkInformation!)
+                                    print("어쩌구")
+                                    save()
+                                    print(liked[0])
                                 }, label: {
                                     Text("Like  ♥︎")
                                         .foregroundColor(.buttonTextGray)
@@ -109,9 +115,8 @@ struct ArtWorkDetailView: View {
                             } else {
                                 Button(action: {
                                     isShowingFavorite = false
-//                                    favorites.append(artWorkInformation!)
                                     likeColor.toggle()
-    //                                coreDataManager.createLikeData(jsonObject: )
+                                    
                                 }, label: {
                                     Text("Like  ♥︎")
                                         .foregroundColor(.white)
@@ -119,9 +124,8 @@ struct ArtWorkDetailView: View {
                                 .frame(width: 200, height: 40, alignment: .center)
                                 .background(Rectangle().fill(Color.magentaPink))
                             }
-                            
-                            
-                            Link(destination: URL(string: permalinkDefault)!) {
+
+                            Link(destination: URL(string: artWorkInformation!.permalink)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
                             }
@@ -138,6 +142,19 @@ struct ArtWorkDetailView: View {
             .padding(.horizontal, 16)
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+    }
+    
+    func save() {
+        let add = Liked(context: self.viewContext)
+        add.nftName = artWorkInformation?.name
+        add.nftImage = artWorkInformation?.imageURL
+        add.permalink = artWorkInformation?.permalink
+        add.creator = artWorkInformation?.creator.user?.username
+//        add.nid = 0
+//        add.nftDescription = artWorkInformation?.unitDatumDescription
+        add.isLiked = true
+        
+        try? self.viewContext.save()
     }
 }
 

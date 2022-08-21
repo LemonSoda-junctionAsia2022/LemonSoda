@@ -9,13 +9,20 @@ import SwiftUI
 
 struct PopupView: View {
     @Binding var isShowingFavorite: Bool
-    
-    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
-    var liked: FetchedResults<Liked>
+//    @Binding var likeColor: Bool
+    @Environment(\.managedObjectContext) private var viewContext
+
+//    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
+    var artWorkInformation: UnitDatum?
+
+//    var liked: FetchedResults<Liked>
     
     var body: some View {
         ZStack{
-            Color.white
+            Image("ExhibitionViewBackGround")
+                .resizable()
+                .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
             VStack {
                 HStack {
@@ -31,42 +38,27 @@ struct PopupView: View {
                     
                 }
                 .padding(.horizontal, 16)
-                
-//                ForEach(0..<coreDataManager.likeds.imageURL.count) { num in
-//                    AsyncImage(url: URL(string: liked.nftImage)){ image in
-//                        image
-//                            .resizable()
-//                            .frame(width: 160, height: 160, alignment: .trailing)
-//                            .aspectRatio(contentMode: .fit)
-//                            .border(Color.black, width: 8)
-//                    } placeholder: {
-//                        ProgressView()
-//                            .progressViewStyle(.circular)
-//                    }
-//                }
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(0..<3) {_ in
-                            VStack {
-                                ForEach(0..<2) {_ in
-                                    VStack{
-                                        Image("testImage")
-                                            .resizable()
-                                            .frame(width: 100, height: 100)
-                                            .aspectRatio(contentMode: .fit)
-                                            .border(.black, width: 10)
-                                        Text("작품 이름 / 설명")
-                                            .font(.system(size: 14, weight: .regular))
-                                            .padding(5)
-                                            .background(Rectangle().fill(Color.white))
-                                    }
-                                    .padding(.trailing, 80)
-                                }
+            
+                HStack{
+                    ForEach(0..<favorites.count) { num in
+                        VStack {
+                            AsyncImage(url: URL(string: favorites[num].imageURL!)){ image in
+                                image
+                                    .resizable()
+                                    .frame(width: 160, height: 160, alignment: .trailing)
+                                    .aspectRatio(contentMode: .fit)
+                                    .border(Color.black, width: 8)
+                            } placeholder: {
+                                ProgressView()
+                                    .progressViewStyle(.circular)
                             }
+                            Text(favorites[num].name!)
+                                .foregroundColor(.black)
+                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                .background(Rectangle().fill(Color.white))
+                                .multilineTextAlignment(.trailing)
                         }
                     }
-                    .padding(.leading, 60)
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .leading)
