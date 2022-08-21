@@ -95,13 +95,14 @@ struct ArtWorkDetailView: View {
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
+                        
                         HStack(spacing: 20) {
                             if !likeColor {
                                 Button(action: {
                                     isShowingFavorite = true
-//                                    favorites.append(artWorkInformation!)
+                                    favorites.append(artWorkInformation!)
                                     likeColor.toggle()
-                                    coreDataManager.createLikeData(jsonObject: artWorkInformation!)
+//                                    coreDataManager.createLikeData(jsonObject: artWorkInformation!)
                                     print("어쩌구")
                                     save()
                                     print(liked[0])
@@ -115,6 +116,7 @@ struct ArtWorkDetailView: View {
                                 Button(action: {
                                     isShowingFavorite = false
                                     likeColor.toggle()
+                                    
                                 }, label: {
                                     Text("Like  ♥︎")
                                         .foregroundColor(.white)
@@ -123,7 +125,7 @@ struct ArtWorkDetailView: View {
                                 .background(Rectangle().fill(Color.magentaPink))
                             }
 
-                            Link(destination: URL(string: permalinkDefault)!) {
+                            Link(destination: URL(string: artWorkInformation!.permalink)!) {
                                 Text("More Details and Buy")
                                     .foregroundColor(.white)
                             }
@@ -131,7 +133,7 @@ struct ArtWorkDetailView: View {
                             .background(Rectangle().fill(Color.mainBlue))
                         }
                         .fullScreenCover(isPresented: $isShowingFavorite) {
-                            PopupView(isShowingFavorite: $isShowingFavorite, likeColor: $likeColor)
+                            PopupView(isShowingFavorite: $isShowingFavorite)
                         }
                     }
                 }
