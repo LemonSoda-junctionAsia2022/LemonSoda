@@ -9,15 +9,11 @@ import SwiftUI
 
 struct PopupView: View {
     @Binding var isShowingFavorite: Bool
-//    @Binding var likeColor: Bool
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
-//    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
     var artWorkInformation: UnitDatum?
 
-//    var liked: FetchedResults<Liked>
-    
     var body: some View {
         ZStack{
             Image("ExhibitionViewBackGround")
@@ -40,30 +36,28 @@ struct PopupView: View {
                 })
             }
             .padding(EdgeInsets(top: 30, leading: 30, bottom: 300, trailing: 40))
-
-
             
-                HStack{
-                    ForEach(0..<favorites.count) { num in
-                        VStack {
-                            AsyncImage(url: URL(string: favorites[num].imageURL!)){ image in
-                                image
-                                    .resizable()
-                                    .frame(width: 160, height: 160, alignment: .trailing)
-                                    .aspectRatio(contentMode: .fit)
-                                    .border(Color.black, width: 8)
-                            } placeholder: {
-                                ProgressView()
-                                    .progressViewStyle(.circular)
-                            }
-                            Text(favorites[num].name!)
-                                .foregroundColor(.black)
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                .background(Rectangle().fill(Color.white))
-                                .multilineTextAlignment(.trailing)
+            HStack{
+                ForEach(0..<favorites.count) { num in
+                    VStack {
+                        AsyncImage(url: URL(string: favorites[num].imageURL!)){ image in
+                            image
+                                .resizable()
+                                .frame(width: 160, height: 160, alignment: .trailing)
+                                .aspectRatio(contentMode: .fit)
+                                .border(Color.black, width: 8)
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(.circular)
                         }
+                        Text(favorites[num].name!)
+                            .foregroundColor(.black)
+                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                            .background(Rectangle().fill(Color.white))
+                            .multilineTextAlignment(.trailing)
                     }
                 }
+            }
         }
     }
 }
