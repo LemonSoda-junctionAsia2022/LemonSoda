@@ -12,7 +12,6 @@ struct MainView: View {
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
     @State private var indexPath: Int = 0
-    @State var likeColor = false
     @Binding var isShowingFavorite: Bool
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -68,7 +67,7 @@ struct MainView: View {
             
             if isShowingInfo {
                 let passingData = artWorks.filter({$0.id == indexPath}).first
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, likeColor: likeColor, artWorkInformation: passingData)
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, artWorkInformation: passingData)
             }
         }
     }

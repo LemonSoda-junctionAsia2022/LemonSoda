@@ -10,7 +10,6 @@ import SwiftUI
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
     @Binding var isShowingFavorite: Bool
-    @State var likeColor = false
     @State private var isClicked: Bool = false
     var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
