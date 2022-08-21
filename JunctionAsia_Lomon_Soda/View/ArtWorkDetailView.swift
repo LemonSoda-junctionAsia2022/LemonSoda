@@ -39,8 +39,8 @@ struct ArtWorkDetailView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 160,
-                                       height: 160,
+                                .frame(width: 200,
+                                       height: 200,
                                        alignment: .center)
                         } placeholder: {
                             ProgressView()
@@ -48,9 +48,10 @@ struct ArtWorkDetailView: View {
                         }
                         
                         Text(artWorkInformation?.name ?? "")
+                            .frame(width: 180, height: 20, alignment: .trailing)
                             .foregroundColor(.black)
                             .padding(5)
-                            .font(.system(size: 14, weight: .regular))
+                            .font(.system(size: 14, weight: .semibold))
                             .background(Rectangle().fill(Color.white))
                     }
                     
@@ -58,24 +59,34 @@ struct ArtWorkDetailView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 10){
-                                    Text("NFT number")
-                                    Text("Author")
-                                    Text("Created Date")
-                                    Text("Description")
+                                    HStack{
+                                        Text("NFT ID:")
+                                            .font(.system(size: 20, weight: .black))
+                                            .foregroundColor(.mainBlue)
+                                        Text("\(artWorkInformation!.id)")
+                                    }
+                                    HStack{
+                                        Text("Creator:")
+                                            .font(.system(size: 20, weight: .black))
+                                            .foregroundColor(.mainBlue)
+                                        Text(artWorkInformation?.creator.address ?? "Unknown")
+                                    }
+                                    HStack{
+                                        Text("CreatedDate :")
+                                            .font(.system(size: 20, weight: .black))
+                                            .foregroundColor(.mainBlue)
+                                        Text(artWorkInformation?.collection.createdDate ?? "Unknown")
+                                    }
+                                    HStack{
+                                        Text("Short Description:")
+                                            .foregroundColor(.mainBlue)
+                                            .font(.system(size: 20, weight: .black))
+                                        Text(artWorkInformation?.collection.collectionDescription ?? "Unknown")
+                                    }
                                 }
-                                .foregroundColor(.mainBlue)
                                 .padding(.top, 40)
                                 .padding(.leading, 30)
                                 .padding(.trailing, 15)
-                                
-                                VStack(alignment: .leading, spacing: 10) {
-                                    Text("NFT번호")
-                                    Text("작가")
-                                    Text("제작일")
-                                    Text("설명")
-                                }
-                                .padding(.top, 40)
-                                .padding(.trailing, 30)
                             }
                             Spacer()
                         }
