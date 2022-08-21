@@ -25,16 +25,7 @@ struct ArtWorkDetailView: View {
             Color.mint.ignoresSafeArea()
             
             VStack(spacing: 20) {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        isShowingInfo = false
-                    }, label: {
-                        Image(systemName: "xmark")
-                            .padding(.trailing, 20)
-                    })
-                }
-                
+                xmarkButton()
                 HStack(spacing: 20) {
                     VStack(spacing: 10) {
                         AsyncImage(url: URL(string: artWorkInformation?.imageURL ?? "")){ image in
@@ -57,58 +48,40 @@ struct ArtWorkDetailView: View {
                             .font(.system(size: 14, weight: .semibold))
                             .background(Rectangle().fill(Color.white))
                     }
-                    
+
                     VStack{
-                        VStack(alignment: .leading, spacing: 10) {
-                            HStack {
+                        VStack(alignment: .leading, spacing: 100) {
+                            ScrollView {
                                 VStack(alignment: .leading, spacing: 10){
-                                    HStack{
-                                        Text("NFT ID:")
-                                            .font(.dunggeummo.subtitle)
-                                            .foregroundColor(.mainBlue)
-                                        Text("\(artWorkInformation!.id)")
-                                    }
-                                    HStack{
-                                        Text("Creator:")
-                                            .font(.dunggeummo.subtitle)
-                                            .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.creator.user?.username ?? "Unknown")
-                                    }
-                                    HStack{
-                                        Text("CreatedDate :")
-                                            .font(.dunggeummo.subtitle)
-                                            .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.collection.createdDate.dropLast(16) ?? "Unknown")
-                                    }
-                                    HStack{
+                                    descriptionLabel(title: "NFT ID:", content: "\(artWorkInformation!.id)")
+                                    descriptionLabel(title: "Creator:", content: artWorkInformation?.creator.user?.username ?? "Unknown")
+                                    descriptionLabel(title: "CreatedDate: ", content: String(artWorkInformation?.collection.createdDate.dropLast(16) ?? "Unknown"))
+                                    VStack (alignment: .leading, spacing: 10){
                                         Text("Short Description:")
                                             .font(.dunggeummo.subtitle)
                                             .foregroundColor(.mainBlue)
                                         Text(artWorkInformation?.collection.collectionDescription ?? "Unknown")
                                     }
                                 }
-                                .padding(.top, 40)
-                                .padding(.leading, 30)
-                                .padding(.trailing, 15)
+                                .padding(EdgeInsets(top: 30, leading: 30, bottom: 30, trailing: 30  ))
                             }
-                            Spacer()
                         }
                         .frame(width: 420, height: 195, alignment: .leading)
                         .background(.white)
                         .cornerRadius(10)
                         
                         HStack(spacing: 20) {
-                                Button(action: {
-                                    isShowingFavorite = true
-                                    favorites.append(artWorkInformation!)
-                                    isClicked.toggle()
-                                    save()
-                                }, label: {
-                                    Text("Like  ♥︎")
-                                        .foregroundColor(isClicked ? Color.white : Color.buttonTextGray)
-                                })
-                                .frame(width: 200, height: 40, alignment: .center)
-                                .background(Rectangle().fill(isClicked ? Color.magentaPink:Color.buttonGray))
+                            Button(action: {
+                                isShowingFavorite = true
+                                favorites.append(artWorkInformation!)
+                                isClicked.toggle()
+                                save()
+                            }, label: {
+                                Text("Like  ♥︎")
+                                    .foregroundColor(isClicked ? Color.white : Color.buttonTextGray)
+                            })
+                            .frame(width: 200, height: 40, alignment: .center)
+                            .background(Rectangle().fill(isClicked ? Color.magentaPink:Color.buttonGray))
 
                             Link(destination: URL(string: artWorkInformation!.permalink)!) {
                                 Text("More Details and Buy")
@@ -122,13 +95,13 @@ struct ArtWorkDetailView: View {
                         }
                     }
                 }
+                .padding(.bottom, 20)
+                .padding(.horizontal, 16)
             }
-            .padding(.bottom, 20)
-            .padding(.horizontal, 16)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
     }
-    
+
     func save() {
         let add = Liked(context: self.viewContext)
         add.nftName = artWorkInformation?.name
@@ -136,8 +109,29 @@ struct ArtWorkDetailView: View {
         add.permalink = artWorkInformation?.permalink
         add.creator = artWorkInformation?.creator.user?.username
         add.isLiked = true
-        
+
         try? self.viewContext.save()
     }
-}
 
+    private func descriptionLabel(title: String, content: String) -> some View {
+        HStack{
+            Text(title)
+                .font(.dunggeummo.subtitle)
+                .foregroundColor(.mainBlue)
+            Text(content)
+        }
+    }
+
+    private func xmarkButton() -> some View {
+        HStack {
+            Spacer()
+            Button(action: {
+                isShowingInfo = false
+            }, label: {
+                Image(systemName: "xmark")
+                    .padding(.trailing, 20)
+            })
+        }
+        .padding(.horizontal, 30)
+    }
+}
