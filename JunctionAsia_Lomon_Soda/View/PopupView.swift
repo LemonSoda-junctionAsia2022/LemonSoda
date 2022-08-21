@@ -24,22 +24,24 @@ struct PopupView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            
-            VStack {
-                HStack {
-//                    Text("좋아하는 사진 모음")
-                    Spacer()
-                    Button(action: {
-                        isShowingFavorite = false
-                    }, label: {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .frame(width: 20, height: 20, alignment: .trailing)
-                    })
-                    
-                }
-                .padding(.horizontal, 16)
+
+            HStack {
+                Text("좋아하는 사진 모음")
+                    .font(.dunggeummo.subtitle)
+                    .foregroundColor(Color.mainBlue)
+                Spacer()
+                Button(action: {
+                    isShowingFavorite = false
                     dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 20, height: 20, alignment: .trailing)
+                })
+            }
+            .padding(EdgeInsets(top: 30, leading: 30, bottom: 300, trailing: 40))
+
+
             
                 HStack{
                     ForEach(0..<favorites.count) { num in
