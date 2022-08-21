@@ -39,7 +39,7 @@ struct MainView: View {
                                     isShowingInfo = true
                                     indexPath = artWork.id
                                 }, label: {
-                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")) { image in
                                         image
                                             .resizable()
                                             .frame(width: 160, height: 160, alignment: .trailing)
