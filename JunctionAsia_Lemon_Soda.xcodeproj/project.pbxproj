@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		267CDB6228B178F8002A9261 /* Liked+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CDB6028B178F8002A9261 /* Liked+CoreDataClass.swift */; };
 		267CDB6328B178F8002A9261 /* Liked+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CDB6128B178F8002A9261 /* Liked+CoreDataProperties.swift */; };
-		267CDB6528B17997002A9261 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CDB6428B17997002A9261 /* CoreDataManager.swift */; };
 		3820C08C28B1696500A74281 /* GifHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820C08B28B1696500A74281 /* GifHelper.swift */; };
 		3820C08E28B16A8600A74281 /* rabbit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3820C08D28B16A8600A74281 /* rabbit.gif */; };
 		3820C09128B16B7F00A74281 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3820C09028B16B7F00A74281 /* FLAnimatedImage */; };
@@ -17,7 +16,6 @@
 		38AF99FD28B18A62007FB373 /* DungGeunMo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38AF99FC28B18A62007FB373 /* DungGeunMo.otf */; };
 		9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */; };
 		987C0B1C28B0AE5900E9E188 /* UnitDatum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */; };
-		987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1D28B0AE6000E9E188 /* test2.swift */; };
 		987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B1F28B0AE6700E9E188 /* LoadData.swift */; };
 		987C0B2328B0AE8200E9E188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2228B0AE8200E9E188 /* MainView.swift */; };
 		987C0B2628B0B3B300E9E188 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C0B2528B0B3B300E9E188 /* Color+Extension.swift */; };
@@ -35,7 +33,6 @@
 /* Begin PBXFileReference section */
 		267CDB6028B178F8002A9261 /* Liked+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Liked+CoreDataClass.swift"; sourceTree = "<group>"; };
 		267CDB6128B178F8002A9261 /* Liked+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Liked+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		267CDB6428B17997002A9261 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3820C08B28B1696500A74281 /* GifHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifHelper.swift; sourceTree = "<group>"; };
 		3820C08D28B16A8600A74281 /* rabbit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rabbit.gif; sourceTree = "<group>"; };
 		3820C09828B1844F00A74281 /* JunctionAsia-Lomon-Soda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JunctionAsia-Lomon-Soda-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -43,7 +40,6 @@
 		38AF99FC28B18A62007FB373 /* DungGeunMo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DungGeunMo.otf; sourceTree = "<group>"; };
 		9816773228B12F1F009C33FC /* ArtWorkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkDetailView.swift; sourceTree = "<group>"; };
 		987C0B1B28B0AE5900E9E188 /* UnitDatum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDatum.swift; sourceTree = "<group>"; };
-		987C0B1D28B0AE6000E9E188 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		987C0B1F28B0AE6700E9E188 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		987C0B2228B0AE8200E9E188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		987C0B2528B0B3B300E9E188 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -83,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				3820C08A28B1695800A74281 /* GifHelper */,
-				987C0B1D28B0AE6000E9E188 /* test2.swift */,
 				3820C09928B1855700A74281 /* Font+Extension.swift */,
 				987C0B2528B0B3B300E9E188 /* Color+Extension.swift */,
 			);
@@ -104,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				987C0B1F28B0AE6700E9E188 /* LoadData.swift */,
-				267CDB6428B17997002A9261 /* CoreDataManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,10 +250,8 @@
 				987C0B2028B0AE6700E9E188 /* LoadData.swift in Sources */,
 				987C0B2828B0C20E00E9E188 /* PopupView.swift in Sources */,
 				3820C08C28B1696500A74281 /* GifHelper.swift in Sources */,
-				987C0B1E28B0AE6000E9E188 /* test2.swift in Sources */,
 				267CDB6228B178F8002A9261 /* Liked+CoreDataClass.swift in Sources */,
 				98F1BE8B28B0AD9200FA0E61 /* JunctionAsia_Lemon_SodaApp.swift in Sources */,
-				267CDB6528B17997002A9261 /* CoreDataManager.swift in Sources */,
 				9816773328B12F1F009C33FC /* ArtWorkDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

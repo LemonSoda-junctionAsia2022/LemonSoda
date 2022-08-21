@@ -6,6 +6,8 @@
 //
 import Foundation
 
+var favorites: [UnitDatum] = []
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
@@ -16,7 +18,6 @@ func load<T: Decodable>(_ filename: String) -> T {
 
     do {
         data = try Data(contentsOf: file)
-        print(data)
     } catch {
         fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
     }
@@ -28,5 +29,3 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
-
-var favorites: [UnitDatum] = []
