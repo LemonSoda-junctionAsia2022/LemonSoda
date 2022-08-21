@@ -16,12 +16,9 @@ extension Liked {
         return NSFetchRequest<Liked>(entityName: "Liked")
     }
 
-    @NSManaged public var nid: Int32
     @NSManaged public var nftImage: String?
     @NSManaged public var nftName: String?
-    @NSManaged public var nftDescription: String?
     @NSManaged public var creator: String?
-    @NSManaged public var createdDate: Date?
     @NSManaged public var permalink: String?
     @NSManaged public var isLiked: Bool
 

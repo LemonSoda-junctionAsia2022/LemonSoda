@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct JunctionAsia_Lemon_SodaApp: App {
-
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-//            IntroView()
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+
     }
 }

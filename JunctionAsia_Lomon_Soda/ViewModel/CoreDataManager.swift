@@ -18,10 +18,10 @@ class CoreDataManager {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         let newItem = Liked(context: viewContext)
-        newItem.nid = Int32(jsonObject.id)
+//        newItem.nid = Int32(jsonObject.id)
         newItem.nftImage = jsonObject.imageURL
         newItem.nftName = jsonObject.name
-        newItem.nftDescription = jsonObject.unitDatumDescription
+//        newItem.nftDescription = jsonObject.unitDatumDescription
         newItem.creator = jsonObject.creator.user?.username
         newItem.isLiked = true
         do {
