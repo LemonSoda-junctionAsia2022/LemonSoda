@@ -10,7 +10,8 @@ import SwiftUI
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
     @Binding var isShowingFavorite: Bool
-    @Binding var likeColor: Bool
+    @State var likeColor = false
+    @State private var isClicked: Bool = false
     var artWorkInformation: UnitDatum?
     var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
     @Environment(\.managedObjectContext) private var viewContext
@@ -97,33 +98,17 @@ struct ArtWorkDetailView: View {
                         .cornerRadius(10)
                         
                         HStack(spacing: 20) {
-                            if !likeColor {
                                 Button(action: {
                                     isShowingFavorite = true
                                     favorites.append(artWorkInformation!)
-                                    likeColor.toggle()
-//                                    coreDataManager.createLikeData(jsonObject: artWorkInformation!)
-                                    print("어쩌구")
+                                    isClicked.toggle()
                                     save()
-                                    print(liked[0])
                                 }, label: {
                                     Text("Like  ♥︎")
-                                        .foregroundColor(.buttonTextGray)
+                                        .foregroundColor(isClicked ? Color.white : Color.buttonTextGray)
                                 })
                                 .frame(width: 200, height: 40, alignment: .center)
-                                .background(Rectangle().fill(Color.buttonGray))
-                            } else {
-                                Button(action: {
-                                    isShowingFavorite = false
-                                    likeColor.toggle()
-                                    
-                                }, label: {
-                                    Text("Like  ♥︎")
-                                        .foregroundColor(.white)
-                                })
-                                .frame(width: 200, height: 40, alignment: .center)
-                                .background(Rectangle().fill(Color.magentaPink))
-                            }
+                                .background(Rectangle().fill(isClicked ? Color.magentaPink:Color.buttonGray))
 
                             Link(destination: URL(string: artWorkInformation!.permalink)!) {
                                 Text("More Details and Buy")
@@ -150,8 +135,6 @@ struct ArtWorkDetailView: View {
         add.nftImage = artWorkInformation?.imageURL
         add.permalink = artWorkInformation?.permalink
         add.creator = artWorkInformation?.creator.user?.username
-//        add.nid = 0
-//        add.nftDescription = artWorkInformation?.unitDatumDescription
         add.isLiked = true
         
         try? self.viewContext.save()
