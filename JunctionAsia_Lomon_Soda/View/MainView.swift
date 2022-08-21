@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var artWorks: [UnitDatum] = load("NFTDataSet.json")
-    @State private var isShowingFavorite = false
+    @Binding var isShowingFavorite: Bool
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
     @State private var indexPath: Int = 0
@@ -71,12 +71,5 @@ struct MainView: View {
         GifView(fileName: "rabbit")
             .frame(width: 450, height: 225, alignment: .center)
             .offset(x: -300, y: 80)
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
