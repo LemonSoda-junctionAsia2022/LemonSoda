@@ -71,13 +71,13 @@ struct ArtWorkDetailView: View {
                                         Text("Creator:")
                                             .font(.system(size: 20, weight: .black))
                                             .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.creator.address ?? "Unknown")
+                                        Text(artWorkInformation?.creator.user?.username ?? "Unknown")
                                     }
                                     HStack{
                                         Text("CreatedDate :")
                                             .font(.system(size: 20, weight: .black))
                                             .foregroundColor(.mainBlue)
-                                        Text(artWorkInformation?.collection.createdDate ?? "Unknown")
+                                        Text(artWorkInformation?.collection.createdDate.dropLast(16) ?? "Unknown")
                                     }
                                     HStack{
                                         Text("Short Description:")
