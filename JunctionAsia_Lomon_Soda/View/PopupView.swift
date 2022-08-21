@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PopupView: View {
     @Binding var isShowingFavorite: Bool
-    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
     var artWorkInformation: UnitDatum?
@@ -19,9 +18,9 @@ struct PopupView: View {
             backgroundImage()
             popupViewLabel()
 
-            HStack{
+            HStack(alignment: .top, spacing: 30) {
                 ForEach(0..<favorites.count) { num in
-                    VStack {
+                    VStack(alignment: .trailing) {
                         AsyncImage(url: URL(string: favorites[num].imageURL!)){ image in
                             image
                                 .resizable()

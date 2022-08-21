@@ -9,12 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @State private var artWorks: [UnitDatum] = load("NFTDataSet.json")
-    @Binding var isShowingFavorite: Bool
     @State private var isShowingInfo = false
     @State private var arts: [UnitDatum] = [UnitDatum]()
     @State private var indexPath: Int = 0
-    @State var likeColor = false
-    @Environment(\.managedObjectContext) private var viewContext
+    @Binding var isShowingFavorite: Bool
 
     var height: CGFloat = 2
     
@@ -29,14 +27,17 @@ struct MainView: View {
                 HStack(spacing: 80) {
                     Spacer()
                         .frame(width: 160, height: 160, alignment: .trailing)
+                    
                     ForEach(artWorks, id: \.id) { artWork in
+                        
                         if artWork.imageURL?.isEmpty == false {
                             VStack(alignment: .trailing, spacing: 10) {
+                                
                                 Button(action: {
                                     isShowingInfo = true
                                     indexPath = artWork.id
                                 }, label: {
-                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")){ image in
+                                    AsyncImage(url: URL(string: artWork.imageThumbnailURL ?? "")) { image in
                                         image
                                             .resizable()
                                             .frame(width: 160, height: 160, alignment: .trailing)
@@ -47,6 +48,7 @@ struct MainView: View {
                                             .progressViewStyle(.circular)
                                     }
                                 })
+                                
                                 Text("\(artWork.name ?? "")")
                                     .foregroundColor(.black)
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
@@ -59,10 +61,12 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.horizontal)
             }
             .padding(.trailing, 30)
+            
             rabbit()
+            
             if isShowingInfo {
-                let passingData = artWorks.filter({$0.id == indexPath}).first
-                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, likeColor: likeColor, artWorkInformation: passingData)
+                let passingData = artWorks.filter( {$0.id == indexPath }).first
+                ArtWorkDetailView(isShowingInfo: $isShowingInfo, isShowingFavorite: $isShowingFavorite, artWorkInformation: passingData)
             }
         }
     }

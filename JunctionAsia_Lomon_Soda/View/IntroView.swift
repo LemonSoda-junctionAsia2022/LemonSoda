@@ -9,17 +9,21 @@ import SwiftUI
 
 struct IntroView: View {
     @State var isShowingFavorite = false
+    
     var body: some View {
         ZStack{
             Image("MainViewBackGround")
                 .resizable()
                 .ignoresSafeArea()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            
             rabbit()
+            
             VStack(spacing: 10){
                 Text("NFiTion")
                     .font(.dunggeummo.title)
                     .foregroundColor(Color.mainTitleGreen)
+                
                 Text("NFT Exhibition X Junction Asia 2022")
                     .font(.dunggeummo.subtitle)
                     .foregroundColor(Color.mainTitleGreen)

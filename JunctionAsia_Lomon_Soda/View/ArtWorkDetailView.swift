@@ -10,14 +10,8 @@ import SwiftUI
 struct ArtWorkDetailView: View {
     @Binding var isShowingInfo: Bool
     @Binding var isShowingFavorite: Bool
-    @State var likeColor = false
     @State private var isClicked: Bool = false
     var artWorkInformation: UnitDatum?
-    var permalinkDefault = "https://opensea.io/assets/ethereum/0x932261f9fc8da46c4a22e31b45c4de60623848bf/52529"
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(entity: Liked.entity(), sortDescriptors: [])
-    var liked: FetchedResults<Liked>
     
     var body: some View {
         ZStack {
@@ -71,17 +65,16 @@ struct ArtWorkDetailView: View {
                         .cornerRadius(10)
                         
                         HStack(spacing: 20) {
-                            Button(action: {
-                                isShowingFavorite = true
-                                favorites.append(artWorkInformation!)
-                                isClicked.toggle()
-                                save()
-                            }, label: {
-                                Text("Like  ♥︎")
-                                    .foregroundColor(isClicked ? Color.white : Color.buttonTextGray)
-                            })
-                            .frame(width: 200, height: 40, alignment: .center)
-                            .background(Rectangle().fill(isClicked ? Color.magentaPink:Color.buttonGray))
+                                Button(action: {
+                                    isShowingFavorite = true
+                                    favorites.append(artWorkInformation!)
+                                    isClicked.toggle()
+                                }, label: {
+                                    Text("Like  ♥︎")
+                                        .foregroundColor(isClicked ? Color.white : Color.buttonTextGray)
+                                })
+                                .frame(width: 200, height: 40, alignment: .center)
+                                .background(Rectangle().fill(isClicked ? Color.magentaPink:Color.buttonGray))
 
                             Link(destination: URL(string: artWorkInformation!.permalink)!) {
                                 Text("More Details and Buy")
@@ -100,17 +93,6 @@ struct ArtWorkDetailView: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
         }
-    }
-
-    func save() {
-        let add = Liked(context: self.viewContext)
-        add.nftName = artWorkInformation?.name
-        add.nftImage = artWorkInformation?.imageURL
-        add.permalink = artWorkInformation?.permalink
-        add.creator = artWorkInformation?.creator.user?.username
-        add.isLiked = true
-
-        try? self.viewContext.save()
     }
 
     private func descriptionLabel(title: String, content: String) -> some View {
